@@ -34,4 +34,3 @@ class Bob
     end
   end
 end
-
