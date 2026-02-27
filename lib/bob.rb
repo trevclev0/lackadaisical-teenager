@@ -32,10 +32,7 @@ class Bob
 
     def get_num_ending_exclamations(str)
       match = str.match(/(!+)$/)
-      if match
-        return match[1].length
-      end
-      return 0
+      match&.[](1)&.length || 0
     end
 
     def elevated_question?(str)
