@@ -30,14 +30,14 @@ class Bob
       str[-1] == '?' || elevated_question?(str)
     end
 
-    def get_num_ending_exclamations(str)
+    def ending_exclamation_count(str)
       match = str.match(/(!+)$/)
       match&.[](1)&.length || 0
     end
 
     def elevated_question?(str)
-      num_ending_exclamations = get_num_ending_exclamations(str)
-      num_ending_exclamations > 0 && str[-(num_ending_exclamations + 1)] == '?'
+      count = ending_exclamation_count(str)
+      count > 0 && str[-(count + 1)] == '?'
     end
   end
 end
