@@ -14,11 +14,11 @@ class Bob
     private
 
     def silence?(str)
-      return str.empty?
+      str.empty?
     end
 
     def yelling_question?(str)
-      return yelling?(str) && question?(str)
+      yelling?(str) && question?(str)
     end
 
     def yelling?(str)
@@ -27,7 +27,7 @@ class Bob
     end
 
     def question?(str)
-      return str[-1] == '?' || elevated_question?(str)
+      str[-1] == '?' || elevated_question?(str)
     end
 
     def get_num_ending_exclamations(str)
@@ -37,7 +37,7 @@ class Bob
 
     def elevated_question?(str)
       num_ending_exclamations = get_num_ending_exclamations(str)
-      return num_ending_exclamations > 0 && str[-(num_ending_exclamations + 1)] == '?'
+      num_ending_exclamations > 0 && str[-(num_ending_exclamations + 1)] == '?'
     end
   end
 end
