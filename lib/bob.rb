@@ -22,22 +22,11 @@ class Bob
     end
 
     def yelling?(str)
-      letters = str.scan(/[[:alpha:]]/)
-      !letters.empty? && letters.all? { |c| c == c.upcase }
+      str.match?(/[[:alpha:]]/) && str == str.upcase
     end
 
     def question?(str)
-      str[-1] == '?' || elevated_question?(str)
-    end
-
-    def ending_exclamation_count(str)
-      match = str.match(/(!+)$/)
-      match&.[](1)&.length || 0
-    end
-
-    def elevated_question?(str)
-      count = ending_exclamation_count(str)
-      count > 0 && str[-(count + 1)] == '?'
+      str.sub(/!*$/, '').end_with?('?')
     end
   end
 end
