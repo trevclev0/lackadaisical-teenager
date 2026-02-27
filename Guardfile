@@ -15,8 +15,6 @@
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
-notification :terminal_notifier # Optional: sends notifications to your terminal
-
 guard :minitest do
   # with Minitest::Unit
   watch(%r{^test/(.*)\/?test_(.*)\.rb$})
