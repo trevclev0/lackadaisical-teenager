@@ -3,21 +3,10 @@ class Bob
     def hey(remark)
       remark = remark.strip # strip whitespace
 
-      if silence?(remark)
-        return 'Fine. Be that way!'
-      end
-
-      if yelling_question?(remark)
-        return "Calm down, I know what I'm doing!"
-      end
-
-      if yelling?(remark)
-        return 'Whoa, chill out!'
-      end
-
-      if question?(remark)
-        return 'Sure.'
-      end
+      return 'Fine. Be that way!' if silence?(remark)
+      return "Calm down, I know what I'm doing!" if yelling_question?(remark)
+      return 'Whoa, chill out!' if yelling?(remark)
+      return 'Sure.' if question?(remark)
 
       'Whatever.'
     end
