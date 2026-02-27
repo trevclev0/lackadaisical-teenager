@@ -36,13 +36,11 @@ class BobTest < Minitest::Test
   # Yelled questions
   #
   def test_responds_to_shouted_question
-    assert_equal "Calm down, I know what I'm doing!",
-                 Bob.hey('WHAT THE HELL?')
+    assert_equal "Calm down, I know what I'm doing!", Bob.hey('WHAT THE HECK?')
   end
 
   def test_yelled_question_takes_precedence
-    assert_equal "Calm down, I know what I'm doing!",
-                 Bob.hey('ZOMG THE %^*@?')
+    assert_equal "Calm down, I know what I'm doing!", Bob.hey('ZOMG THE %^*@?')
   end
 
   #
@@ -61,8 +59,7 @@ class BobTest < Minitest::Test
   # Other statements
   #
   def test_regular_statement
-    assert_equal 'Whatever.',
-                 Bob.hey('Tom-ay-to, tom-aaaah-to.')
+    assert_equal 'Whatever.', Bob.hey('Tom-ay-to, tom-aaaah-to.')
   end
 
   def test_numbers_without_question_or_yelling
@@ -70,8 +67,7 @@ class BobTest < Minitest::Test
   end
 
   def test_mixed_case_not_yelling
-    assert_equal 'Whatever.',
-                 Bob.hey("Let's go make out behind the gym")
+    assert_equal 'Whatever.', Bob.hey("Let's go make out behind the gym")
   end
 
   #
@@ -89,8 +85,7 @@ class BobTest < Minitest::Test
     }
 
     cases.each do |input, expected|
-      assert_equal expected, Bob.hey(input),
-                   "Expected #{input.inspect} to return #{expected.inspect}"
+      assert_equal expected, Bob.hey(input), "Expected #{input.inspect} to return #{expected.inspect}"
     end
   end
 end
