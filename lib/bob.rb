@@ -9,8 +9,6 @@ class Bob
     # - If the remark is yelling, return 'Whoa, chill out!'
     # - If the remark is a question, return 'Sure.'
     # - Otherwise, return 'Whatever.'
-    #
-    #    # Returns a response to a remark.
     def hey(remark)
       stripped = remark.to_s.strip # ensure string before removing whitespace
 
