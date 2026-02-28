@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Bob
   class << self
     def hey(remark)
