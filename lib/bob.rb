@@ -2,6 +2,15 @@
 
 class Bob
   class << self
+    # Returns a response to a remark.
+    #
+    # The remark is first stripped of whitespace, and then the following rules are applied:
+    #
+    # - If the remark is empty, returns 'Fine. Be that way!'
+    # - If the remark is a yelling question, returns 'Calm down, I know what I'm doing!'
+    # - If the remark is yelling, returns 'Whoa, chill out!'
+    # - If the remark is a question, returns 'Sure.'
+    # - Otherwise, returns 'Whatever.'
     def hey(remark)
       stripped = remark.to_s.strip # ensure string before removing whitespace
 
@@ -15,19 +24,24 @@ class Bob
 
     private
 
+    # Returns true if the given string is empty, false otherwise.
     def silence?(str)
       str.empty?
     end
 
+    # Returns true if the given string is both yelling and a question, false otherwise.
     def yelling_question?(str)
       yelling?(str) && question?(str)
     end
 
+    # Returns true if the given string is all uppercase and contains at least one letter, false otherwise.
     def yelling?(str)
       # RegEx checks if string contains at least one letter
       str.match?(/[[:alpha:]]/) && str == str.upcase
     end
 
+    # Returns true if the given string ends with a question mark, false otherwise.
+    # Strips all exclamation marks from the end of the string before checking.
     def question?(str)
       # Removing all exclamation marks at the end in case it's a yelling question
       str.sub(/!*$/, '').end_with?('?')
