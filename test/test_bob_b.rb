@@ -81,6 +81,8 @@ class BobTest < Minitest::Test
     end
   end
 
+  private
+
   def cases
     {
       'WATCH OUT!' => 'Whoa, chill out!',
