@@ -29,13 +29,10 @@ class Bob
     # Returns true if the given string is both yelling and a question, false otherwise.
     def yelling_question?(str) = yelling?(str) && question?(str)
 
-    # Returns true if the given string is all uppercase and contains at least one letter, false otherwise.
-    # RegEx checks if string contains at least one letter
+    # Returns true if the given string is all uppercase and contains at least one letter.
     def yelling?(str) = str.match?(/[[:alpha:]]/) && str == str.upcase
 
-    # Returns true if the given string ends with a question mark, false otherwise.
-    # RegEx checks if string ends with one or more question marks
-    # Strips all exclamation marks from the end of the string before checking.
+    # Returns true if the given string ends with a question mark, after stripping trailing exclamation marks.
     def question?(str) = str.sub(/!*$/, '').end_with?('?')
   end
 end
