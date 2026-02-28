@@ -3,7 +3,7 @@
 class Bob
   class << self
     def hey(remark)
-      stripped = remark.strip # strip whitespace
+      stripped = remark.to_s.strip # strip whitespace
 
       return 'Fine. Be that way!' if silence?(stripped)
       return "Calm down, I know what I'm doing!" if yelling_question?(stripped)
