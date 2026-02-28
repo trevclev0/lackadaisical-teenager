@@ -30,7 +30,7 @@ class Bob
   def self.yelling?(str) = str.match?(/[[:alpha:]]/) && str == str.upcase
 
   # Returns true if the given string ends with a question mark, after stripping trailing exclamation marks.
-  def self.question?(str) = str.sub(/!*$/, '').end_with?('?')
+  def self.question?(str) = str.sub(/!+\z/, '').end_with?('?')
 
   private_class_method :silence?, :yelling_question?, :yelling?, :question?
 end
