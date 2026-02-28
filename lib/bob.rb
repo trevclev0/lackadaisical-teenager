@@ -1,31 +1,31 @@
 # frozen_string_literal: true
 
 class Bob
-  class << self
-    # Returns a response to the given remark based on the following rules:
-    #
-    # - If the remark is empty, return 'Fine. Be that way!'
-    # - If the remark is both yelling and a question, return "Calm down, I know what I'm doing!"
-    # - If the remark is yelling, return 'Whoa, chill out!'
-    # - If the remark is a question, return 'Sure.'
-    # - Otherwise, return 'Whatever.'
-    def hey(remark)
-      stripped = remark.to_s.strip # ensure string before removing whitespace
+  # Returns a response to the given remark based on the following rules:
+  #
+  # - If the remark is empty, return 'Fine. Be that way!'
+  # - If the remark is both yelling and a question, return "Calm down, I know what I'm doing!"
+  # - If the remark is yelling, return 'Whoa, chill out!'
+  # - If the remark is a question, return 'Sure.'
+  # - Otherwise, return 'Whatever.'
+  def self.hey(remark)
+    stripped = remark.to_s.strip # ensure string before removing whitespace
 
-      case
-      when silence?(stripped)
-        'Fine. Be that way!'
-      when yelling_question?(stripped)
-        "Calm down, I know what I'm doing!"
-      when yelling?(stripped)
-        'Whoa, chill out!'
-      when question?(stripped)
-        'Sure.'
-      else
-        'Whatever.'
-      end
+    case
+    when silence?(stripped)
+      'Fine. Be that way!'
+    when yelling_question?(stripped)
+      "Calm down, I know what I'm doing!"
+    when yelling?(stripped)
+      'Whoa, chill out!'
+    when question?(stripped)
+      'Sure.'
+    else
+      'Whatever.'
     end
+  end
 
+  class << self
     private
 
     # Returns true if the given string is empty, false otherwise.
