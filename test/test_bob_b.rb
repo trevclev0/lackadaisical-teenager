@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'minitest/autorun'
 require_relative '../lib/bob'
 
@@ -74,18 +76,20 @@ class BobTest < Minitest::Test
   # Edge cases table test
   #
   def test_multiple_cases
-    cases = {
-      "WATCH OUT!" => 'Whoa, chill out!',
-      "How are you?" => 'Sure.',
-      "" => 'Fine. Be that way!',
-      "   " => 'Fine. Be that way!',
-      "This is fine." => 'Whatever.',
-      "WHAT?" => "Calm down, I know what I'm doing!",
-      "1, 2, 3?" => 'Sure.'
-    }
-
     cases.each do |input, expected|
       assert_equal expected, Bob.hey(input), "Expected #{input.inspect} to return #{expected.inspect}"
     end
+  end
+
+  def cases
+    {
+      'WATCH OUT!' => 'Whoa, chill out!',
+      'How are you?' => 'Sure.',
+      '' => 'Fine. Be that way!',
+      '   ' => 'Fine. Be that way!',
+      'This is fine.' => 'Whatever.',
+      'WHAT?' => "Calm down, I know what I'm doing!",
+      '1, 2, 3?' => 'Sure.'
+    }
   end
 end
