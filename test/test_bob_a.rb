@@ -43,7 +43,7 @@ class BobTest < Minitest::Test
   end
 
   def test_yelling_with_special_characters
-    assert_equal 'Whoa, chill out!', Bob.hey("ZOMG THE %^*@\#$(*^ ZOMBIES ARE HERE!!11!!1!")
+    assert_equal 'Whoa, chill out!', Bob.hey('ZOMG THE %^*@#$(*^ ZOMBIES ARE HERE!!11!!1!')
   end
 
   # --- 4. Testing "Calm down, I know what I'm doing!" (Yelled Questions) ---
