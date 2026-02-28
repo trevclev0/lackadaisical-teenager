@@ -2,15 +2,15 @@
 
 class Bob
   class << self
-    # Returns a response to a remark.
+    # Returns a response to the given remark based on the following rules:
     #
-    # The remark is first stripped of whitespace, and then the following rules are applied:
+    # - If the remark is empty, return 'Fine. Be that way!'
+    # - If the remark is both yelling and a question, return "Calm down, I know what I'm doing!"
+    # - If the remark is yelling, return 'Whoa, chill out!'
+    # - If the remark is a question, return 'Sure.'
+    # - Otherwise, return 'Whatever.'
     #
-    # - If the remark is empty, returns 'Fine. Be that way!'
-    # - If the remark is a yelling question, returns 'Calm down, I know what I'm doing!'
-    # - If the remark is yelling, returns 'Whoa, chill out!'
-    # - If the remark is a question, returns 'Sure.'
-    # - Otherwise, returns 'Whatever.'
+    #    # Returns a response to a remark.
     def hey(remark)
       stripped = remark.to_s.strip # ensure string before removing whitespace
 
