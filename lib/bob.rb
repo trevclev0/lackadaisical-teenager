@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Bob is a lackadaisical teenager who responds to remarks in a predictable way.
+# He only responds to the tone and structure of remarks, not their content.
 class Bob
   # Returns a response to the given remark based on the following rules:
   #
@@ -9,15 +11,14 @@ class Bob
   # - If the remark is a question, return 'Sure.'
   # - Otherwise, return 'Whatever.'
   def self.hey(remark)
-    stripped = remark.to_s.strip # ensure string before removing whitespace
+    stripped = remark.to_s.strip
 
-    case
-    when silence?(stripped) then 'Fine. Be that way!'
-    when yelling_question?(stripped) then "Calm down, I know what I'm doing!"
-    when yelling?(stripped) then 'Whoa, chill out!'
-    when question?(stripped) then 'Sure.'
-    else 'Whatever.'
-    end
+    return 'Fine. Be that way!' if silence?(stripped)
+    return "Calm down, I know what I'm doing!" if yelling_question?(stripped)
+    return 'Whoa, chill out!' if yelling?(stripped)
+    return 'Sure.' if question?(stripped)
+
+    'Whatever.'
   end
 
   # Returns true if the given string is empty, false otherwise.
