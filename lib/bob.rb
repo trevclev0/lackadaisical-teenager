@@ -14,12 +14,18 @@ class Bob
     def hey(remark)
       stripped = remark.to_s.strip # ensure string before removing whitespace
 
-      return 'Fine. Be that way!' if silence?(stripped)
-      return "Calm down, I know what I'm doing!" if yelling_question?(stripped)
-      return 'Whoa, chill out!' if yelling?(stripped)
-      return 'Sure.' if question?(stripped)
-
-      'Whatever.'
+      case stripped
+      when silence?(stripped)
+        'Fine. Be that way!'
+      when yelling_question?(stripped)
+        "Calm down, I know what I'm doing!"
+      when yelling?(stripped)
+        'Whoa, chill out!'
+      when question?(stripped)
+        'Sure.'
+      else
+        'Whatever.'
+      end
     end
 
     private
