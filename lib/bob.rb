@@ -20,19 +20,17 @@ class Bob
     end
   end
 
-  class << self
-    private
+  # Returns true if the given string is empty, false otherwise.
+  def self.silence?(str) = str.empty?
 
-    # Returns true if the given string is empty, false otherwise.
-    def silence?(str) = str.empty?
+  # Returns true if the given string is both yelling and a question, false otherwise.
+  def self.yelling_question?(str) = yelling?(str) && question?(str)
 
-    # Returns true if the given string is both yelling and a question, false otherwise.
-    def yelling_question?(str) = yelling?(str) && question?(str)
+  # Returns true if the given string is all uppercase and contains at least one letter.
+  def self.yelling?(str) = str.match?(/[[:alpha:]]/) && str == str.upcase
 
-    # Returns true if the given string is all uppercase and contains at least one letter.
-    def yelling?(str) = str.match?(/[[:alpha:]]/) && str == str.upcase
+  # Returns true if the given string ends with a question mark, after stripping trailing exclamation marks.
+  def self.question?(str) = str.sub(/!*$/, '').end_with?('?')
 
-    # Returns true if the given string ends with a question mark, after stripping trailing exclamation marks.
-    def question?(str) = str.sub(/!*$/, '').end_with?('?')
-  end
+  private_class_method :silence?, :yelling_question?, :yelling?, :question?
 end
