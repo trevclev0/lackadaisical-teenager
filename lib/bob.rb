@@ -12,16 +12,11 @@ class Bob
     stripped = remark.to_s.strip # ensure string before removing whitespace
 
     case
-    when silence?(stripped)
-      'Fine. Be that way!'
-    when yelling_question?(stripped)
-      "Calm down, I know what I'm doing!"
-    when yelling?(stripped)
-      'Whoa, chill out!'
-    when question?(stripped)
-      'Sure.'
-    else
-      'Whatever.'
+    when silence?(stripped) then 'Fine. Be that way!'
+    when yelling_question?(stripped) then "Calm down, I know what I'm doing!"
+    when yelling?(stripped) then 'Whoa, chill out!'
+    when question?(stripped) then 'Sure.'
+    else 'Whatever.'
     end
   end
 
