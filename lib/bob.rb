@@ -24,26 +24,18 @@ class Bob
     private
 
     # Returns true if the given string is empty, false otherwise.
-    def silence?(str)
-      str.empty?
-    end
+    def silence?(str) = str.empty?
 
     # Returns true if the given string is both yelling and a question, false otherwise.
-    def yelling_question?(str)
-      yelling?(str) && question?(str)
-    end
+    def yelling_question?(str) = yelling?(str) && question?(str)
 
     # Returns true if the given string is all uppercase and contains at least one letter, false otherwise.
-    def yelling?(str)
-      # RegEx checks if string contains at least one letter
-      str.match?(/[[:alpha:]]/) && str == str.upcase
-    end
+    # RegEx checks if string contains at least one letter
+    def yelling?(str) = str.match?(/[[:alpha:]]/) && str == str.upcase
 
     # Returns true if the given string ends with a question mark, false otherwise.
+    # RegEx checks if string ends with one or more question marks
     # Strips all exclamation marks from the end of the string before checking.
-    def question?(str)
-      # Removing all exclamation marks at the end in case it's a yelling question
-      str.sub(/!*$/, '').end_with?('?')
-    end
+    def question?(str) = str.sub(/!*$/, '').end_with?('?')
   end
 end
