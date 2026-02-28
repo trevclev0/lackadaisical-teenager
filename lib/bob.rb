@@ -24,10 +24,12 @@ class Bob
     end
 
     def yelling?(str)
+      # RegEx checks if string contains at least one letter
       str.match?(/[[:alpha:]]/) && str == str.upcase
     end
 
     def question?(str)
+      # Removing all exclamation marks at the end in case it's a yelling question
       str.sub(/!*$/, '').end_with?('?')
     end
   end
