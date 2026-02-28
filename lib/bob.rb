@@ -14,7 +14,7 @@ class Bob
     def hey(remark)
       stripped = remark.to_s.strip # ensure string before removing whitespace
 
-      case stripped
+      case
       when silence?(stripped)
         'Fine. Be that way!'
       when yelling_question?(stripped)
