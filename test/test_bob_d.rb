@@ -59,36 +59,30 @@ class BobTestD < Minitest::Test
   # Yelled questions (highest priority)
   #
   def test_yelled_question
-    assert_equal "Calm down, I know what I'm doing!",
-                 Bob.hey('WHAT ARE YOU DOING?')
+    assert_equal "Calm down, I know what I'm doing!", Bob.hey('WHAT ARE YOU DOING?')
   end
 
   def test_yelled_question_with_symbols
-    assert_equal "Calm down, I know what I'm doing!",
-                 Bob.hey('ZOMG THE %^*@?')
+    assert_equal "Calm down, I know what I'm doing!", Bob.hey('ZOMG THE %^*@?')
   end
 
   def test_yelled_question_with_trailing_spaces
-    assert_equal "Calm down, I know what I'm doing!",
-                 Bob.hey("WHAT?   ")
+    assert_equal "Calm down, I know what I'm doing!", Bob.hey("WHAT?   ")
   end
 
   #
   # Non-yelling statements
   #
   def test_statement
-    assert_equal 'Whatever.',
-                 Bob.hey('Tom-ay-to, tom-aaaah-to.')
+    assert_equal 'Whatever.', Bob.hey('Tom-ay-to, tom-aaaah-to.')
   end
 
   def test_lowercase_statement
-    assert_equal 'Whatever.',
-                 Bob.hey('Let us go make out behind the gym!')
+    assert_equal 'Whatever.', Bob.hey('Let us go make out behind the gym!')
   end
 
   def test_mixed_case_statement
-    assert_equal 'Whatever.',
-                 Bob.hey('This Is Not Yelling')
+    assert_equal 'Whatever.', Bob.hey('This Is Not Yelling')
   end
 
   #
