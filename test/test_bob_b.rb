@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative '../lib/bob'
 
-class BobTest < Minitest::Test
+class BobTestB < Minitest::Test
   #
   # Questions
   #

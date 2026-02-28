@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative '../lib/bob'
 
-class BobTest < Minitest::Test
+class BobTestA < Minitest::Test
   # --- 1. Testing "Whatever." (Anything else) ---
 
   def test_stating_something
